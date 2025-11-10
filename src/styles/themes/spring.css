@@ -1,0 +1,8 @@
+html[data-theme='spring'] {
+  --accent: #16a34a;
+  --accent2: #84cc16;
+  --bg-base: #0c140f;
+  --bg-glow-1: rgba(22, 163, 74, 0.18);
+  --bg-glow-2: rgba(132, 204, 22, 0.14);
+  --panel: rgba(12, 20, 14, 0.94);
+}
