@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff2f70"></stop>
+      <stop offset=".55" stop-color="#7c3aed"></stop>
+      <stop offset="1" stop-color="#4ecdc4"></stop>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"></feGaussianBlur>
+      <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="#0c0f1b"></rect>
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="none" stroke="url(#g1)" stroke-width="6" opacity=".6"></rect>
+
+  <!-- Soft vignettes -->
+  <radialGradient id="v1" cx="0" cy="0">
+    <stop offset="0" stop-color="#7c3aed" stop-opacity=".22"></stop>
+    <stop offset="1" stop-color="#000" stop-opacity="0"></stop>
+  </radialGradient>
+  <radialGradient id="v2" cx="1" cy="1">
+    <stop offset="0" stop-color="#ff2f70" stop-opacity=".22"></stop>
+    <stop offset="1" stop-color="#000" stop-opacity="0"></stop>
+  </radialGradient>
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="url(#v1)"></rect>
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="url(#v2)"></rect>
+
+  <!-- Monogram -->
+  <g filter="url(#glow)">
+    <!-- B -->
+    <path d="M340 300h180c90 0 140 46 140 110c0 52-34 90-87 104c63 14 101 56 101 116c0 80-62 144-178 144H340V300z
+             M430 380v96h73c44 0 69-20 69-48c0-30-25-48-69-48h-73zm0 168v116h89c56 0 87-22 87-58c0-34-31-58-87-58h-89z" fill="url(#g1)"></path>
+    <!-- S -->
+    <path d="M666 372c54 0 100 10 152 36l-38 74c-42-20-75-30-114-30c-46 0-78 16-78 42c0 70 240 26 240 182
+             c0 88-80 138-192 138c-68 0-130-16-182-46l40-72c42 24 92 38 144 38c60 0 98-18 98-48c0-72-240-30-240-182
+             c0-84 78-132 170-132z" fill="url(#g1)"></path>
+  </g>
+</svg>
