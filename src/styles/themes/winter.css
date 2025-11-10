@@ -1,0 +1,8 @@
+html[data-theme='winter'] {
+  --accent: #38bdf8;
+  --accent2: #a78bfa;
+  --bg-base: #0b1119;
+  --bg-glow-1: rgba(56, 189, 248, 0.2);
+  --bg-glow-2: rgba(167, 139, 250, 0.15);
+  --panel: rgba(12, 18, 28, 0.94);
+}
