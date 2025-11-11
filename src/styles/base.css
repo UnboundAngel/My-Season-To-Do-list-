@@ -32,6 +32,59 @@ body {
   min-height: 100vh;
 }
 
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.fog {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 50%, rgba(161, 98, 255, 0.08), transparent 55%);
+  filter: blur(80px);
+  animation: drift 28s linear infinite;
+}
+
+.fog2 {
+  animation-duration: 36s;
+  animation-direction: reverse;
+  background: radial-gradient(circle at 40% 60%, rgba(255, 82, 136, 0.08), transparent 55%);
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fog,
+  .fog2 {
+    animation: none;
+  }
+}
+
+.bloodbar {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  width: clamp(320px, 60vw, 640px);
+  height: 6px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(208, 33, 90, 0.85), rgba(88, 12, 116, 0.85));
+  box-shadow: 0 0 18px rgba(208, 33, 90, 0.55);
+}
+
 body::before {
   content: '';
   position: fixed;
