@@ -1,0 +1,9 @@
+/* Professional default */
+:root {
+  --accent: #4f46e5;
+  --accent2: #22c55e;
+  --bg-base: #0b0c11;
+  --bg-glow-1: rgba(79, 70, 229, 0.12);
+  --bg-glow-2: rgba(34, 197, 94, 0.12);
+  --panel: rgba(14, 17, 28, 0.94);
+}

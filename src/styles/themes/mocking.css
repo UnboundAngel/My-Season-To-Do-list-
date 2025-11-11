@@ -1,0 +1,26 @@
+html[data-theme="mocking"] {
+  --accent: #ff4ec7;
+  --accent2: #ffd400;
+  --bg-base: #05060a;
+  --bg-glow-1: rgba(255, 78, 199, 0.16);
+  --bg-glow-2: rgba(0, 238, 255, 0.12);
+  --panel: rgba(10, 12, 22, 0.94);
+  --edge: #312459;
+  --ink: #f6f8ff;
+  --muted: #9ea3c7;
+}
+
+html[data-theme="mocking"] .btn.primary {
+  background: linear-gradient(100deg, #ff4ec7, #ffd400);
+  color: #07040c;
+}
+
+html[data-theme="mocking"] .task:hover {
+  border-color: #ff4ec7;
+}
+
+html[data-theme="mocking"] .deckCard {
+  background: radial-gradient(circle at 30% 20%, rgba(255, 78, 199, 0.18), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(0, 238, 255, 0.18), transparent 65%),
+    rgba(8, 10, 18, 0.94);
+}

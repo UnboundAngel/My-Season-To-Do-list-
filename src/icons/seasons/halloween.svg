@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Halloween deck icon</title>
+  <desc id="desc">Lantern-lit pumpkins on a blood-red night background.</desc>
+  <defs>
+    <radialGradient id="moonGlow" cx="0.8" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#ffe8a3" />
+      <stop offset="1" stop-color="#ff7b40" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="bloodySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#37010b" />
+      <stop offset="0.55" stop-color="#5e0212" />
+      <stop offset="1" stop-color="#120102" />
+    </linearGradient>
+    <linearGradient id="lanternLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd38a" />
+      <stop offset="1" stop-color="#ff8a3c" />
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="url(#bloodySky)" />
+  <path d="M40 124c16-14 32-18 48-10s26 34 44 32 36-30 58-30 36 28 54 28 38-30 60-36 46 6 62 20 32 22 50 14 34-38 58-36v72H40Z" fill="#36010a" opacity="0.7" />
+  <path d="M24 312c48-42 120-70 184-70s144 28 200 72 80 106 80 170H24Z" fill="#190105" />
+  <path d="M56 292c36-10 60-30 88-30s52 18 84 18 60-14 96-20 76-4 136 20v38H56Z" fill="#34030f" opacity="0.55" />
+  <circle cx="380" cy="128" r="76" fill="url(#moonGlow)" opacity="0.6" />
+  <path d="M118 168c18 0 32 12 38 30l10-4c12-4 24 10 18 22l-20 42c-6 12-24 12-30 0l-28-58c-6-12 6-26 18-22z" fill="#43110d" />
+  <g fill="#1b0507" stroke="#ff6b3d" stroke-width="8" stroke-linecap="round">
+    <path d="M164 360c40-34 84-34 124 0" />
+    <path d="M264 360c40-26 84-26 124 0" />
+  </g>
+  <g fill="#1b0507" stroke="#fa541c" stroke-width="6" stroke-linejoin="round">
+    <path d="M140 360c0-44 30-80 68-80s68 36 68 80-30 64-68 64-68-20-68-64Z" />
+    <path d="M240 360c0-32 24-64 60-64s60 28 60 64-24 60-60 60-60-28-60-60Z" />
+  </g>
+  <g fill="#1b0507" stroke="#fbbf24" stroke-width="8" stroke-linejoin="round">
+    <path d="M156 356c0-20 16-36 36-36s36 16 36 36-16 32-36 32-36-12-36-32Z" />
+    <path d="M272 356c0-20 18-36 38-36s38 16 38 36-18 32-38 32-38-12-38-32Z" />
+  </g>
+  <path d="M188 314c8-12 24-12 32 0" stroke="#fef3c7" stroke-width="8" stroke-linecap="round" fill="none" />
+  <path d="M308 314c8-12 24-12 32 0" stroke="#fef3c7" stroke-width="8" stroke-linecap="round" fill="none" />
+  <g fill="#fa8c2b" stroke="#1b0507" stroke-width="6" stroke-linejoin="round">
+    <ellipse cx="168" cy="372" rx="18" ry="14" />
+    <ellipse cx="208" cy="372" rx="18" ry="14" />
+    <ellipse cx="288" cy="372" rx="18" ry="14" />
+    <ellipse cx="328" cy="372" rx="18" ry="14" />
+  </g>
+  <g fill="#1f0904" stroke="url(#lanternLight)" stroke-width="10" stroke-linejoin="round">
+    <path d="M102 276c14 0 26 12 26 26v36c0 14-12 24-26 24s-26-10-26-24v-36c0-14 12-26 26-26Z" />
+    <path d="M410 276c14 0 26 12 26 26v36c0 14-12 24-26 24s-26-10-26-24v-36c0-14 12-26 26-26Z" />
+  </g>
+  <g stroke="#ffd38a" stroke-width="6" stroke-linecap="round">
+    <line x1="102" y1="258" x2="102" y2="212" />
+    <line x1="410" y1="258" x2="410" y2="206" />
+  </g>
+  <g fill="#fa8c2b" stroke="#ffa53b" stroke-width="6" stroke-linejoin="round">
+    <rect x="86" y="236" width="32" height="18" rx="6" />
+    <rect x="394" y="236" width="32" height="18" rx="6" />
+  </g>
+  <g fill="#fffbf1">
+    <circle cx="192" cy="344" r="6" />
+    <circle cx="224" cy="344" r="6" />
+    <circle cx="308" cy="344" r="6" />
+    <circle cx="340" cy="344" r="6" />
+  </g>
+</svg>

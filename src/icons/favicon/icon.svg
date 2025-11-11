@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Blood &amp; Shadow badge</title>
+  <desc id="desc">A luminous monolith emblem with dual-tone energy ring.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090c16" />
+      <stop offset="1" stop-color="#04060d" />
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f46e5" />
+      <stop offset="1" stop-color="#22c55e" />
+    </linearGradient>
+    <radialGradient id="core" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ff6b9d" stop-opacity="0.9" />
+      <stop offset="0.45" stop-color="#7a1b56" stop-opacity="0.65" />
+      <stop offset="1" stop-color="#140a1a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="pillar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#121a37" />
+      <stop offset="0.5" stop-color="#1d2b54" />
+      <stop offset="1" stop-color="#0b101c" />
+    </linearGradient>
+  </defs>
+  <rect x="28" y="28" width="456" height="456" rx="110" fill="url(#bg)" />
+  <rect x="44" y="44" width="424" height="424" rx="96" fill="none" stroke="url(#ring)" stroke-width="12" />
+  <circle cx="256" cy="210" r="150" fill="url(#core)" opacity="0.9" />
+  <g fill="none" stroke="url(#ring)" stroke-linecap="round" stroke-width="18">
+    <path d="M140 356c44 34 76 48 116 48 76 0 136-60 136-136S332 132 256 132c-44 0-82 20-108 56" />
+  </g>
+  <path d="M224 140c22-20 44-28 68-22 34 8 68 34 108 46" stroke="#f8f0ff" stroke-width="10" stroke-linecap="round" opacity="0.35" fill="none" />
+  <path d="M180 340c32-20 60-20 92 0" stroke="#fef5f5" stroke-width="12" stroke-linecap="round" opacity="0.8" fill="none" />
+  <g fill="#0b101c" stroke="#f8f0ff" stroke-width="12" stroke-linecap="round">
+    <path d="M200 206c0-28 22-50 50-50s50 22 50 50v92c0 28-22 50-50 50s-50-22-50-50Z" />
+  </g>
+  <rect x="224" y="188" width="64" height="152" rx="24" fill="url(#pillar)" />
+  <g fill="#ff6b9d" opacity="0.8">
+    <circle cx="228" cy="220" r="10" />
+    <circle cx="284" cy="220" r="10" />
+    <circle cx="256" cy="266" r="12" />
+  </g>
+  <path d="M228 292c12 12 36 12 48 0" stroke="#22c55e" stroke-width="10" stroke-linecap="round" fill="none" />
+</svg>

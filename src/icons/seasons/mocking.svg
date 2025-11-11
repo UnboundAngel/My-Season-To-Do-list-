@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Mocking neon icon</title>
+  <desc id="desc">Neon smile with playful eyes on a dark deck background.</desc>
+  <defs>
+    <radialGradient id="bg" cx="0.3" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#1a1c2f" />
+      <stop offset="1" stop-color="#05060a" />
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4ec7" />
+      <stop offset="1" stop-color="#ffd400" />
+    </linearGradient>
+    <linearGradient id="smirk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4ec7" />
+      <stop offset="1" stop-color="#00f0ff" />
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="url(#bg)" />
+  <rect x="38" y="38" width="436" height="436" rx="84" fill="none" stroke="url(#ring)" stroke-width="12" />
+  <g fill="none" stroke-linecap="round">
+    <path d="M140 208c12-40 44-68 84-68s72 28 84 68" stroke="#00f0ff" stroke-width="16" opacity="0.6" />
+    <path d="M284 188c12-30 40-48 68-48 28 0 56 18 68 48" stroke="#ff4ec7" stroke-width="14" opacity="0.55" />
+  </g>
+  <g fill="#0b0d16" stroke="#ff4ec7" stroke-width="12" stroke-linecap="round">
+    <path d="M188 202c12 0 22-10 22-22s-10-22-22-22-22 10-22 22 10 22 22 22Z" />
+    <path d="M332 190c12 0 22-10 22-22s-10-22-22-22-22 10-22 22 10 22 22 22Z" />
+  </g>
+  <path d="M180 304c24 40 52 60 84 60s60-20 84-60" fill="none" stroke="url(#smirk)" stroke-width="18" stroke-linecap="round" />
+  <path d="M188 340c20 12 44 18 76 18s56-6 76-18" fill="none" stroke="#ffd400" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <g fill="#ff4ec7">
+    <circle cx="200" cy="352" r="8" />
+    <circle cx="312" cy="352" r="8" />
+  </g>
+  <path d="M228 368c10 6 20 6 30 0" stroke="#00f0ff" stroke-width="8" stroke-linecap="round" opacity="0.6" />
+  <path d="M260 168c14-10 30-10 44 0" stroke="#ffd400" stroke-width="8" stroke-linecap="round" opacity="0.5" />
+  <path d="M176 164c12-8 26-8 38 0" stroke="#ff4ec7" stroke-width="8" stroke-linecap="round" opacity="0.5" />
+</svg>
