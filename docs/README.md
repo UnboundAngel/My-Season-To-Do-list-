@@ -7,6 +7,7 @@ This folder centralizes references for Project Nexus (To-Do).
 - [`structure.md`](structure.md) — file layout and purpose of the major assets.
 - [`updates.md`](updates.md) — changelog style notes for each documentation or UI refresh.
 - [`themes.md`](themes.md) — palette tokens and visual cues for each seasonal mode.
+- [`merging.md`](merging.md) — workflow for fetching Codex branches and resolving conflicts locally.
 
 ## Browser support
 

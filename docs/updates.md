@@ -6,3 +6,4 @@
 - Expanded spacing across the layout for a more professional feel and refreshed the Pokémon-style deck animation.
 - Added the Mocking Neon theme and refreshed seasonal icon art.
 - Recreated documentation hub with structure and theme references.
+- Documented the merge-conflict workflow for Codex branches.

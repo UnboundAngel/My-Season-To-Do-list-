@@ -28,4 +28,4 @@ Updated icons live in [`assets/icons`](assets/icons) and can be swapped as favic
 
 ## Documentation
 
-Additional notes, update history, and structure references live in the [`docs/`](docs) folder.
+Additional notes, update history, merge guidance, and structure references live in the [`docs/`](docs) folder.
