@@ -1,127 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blood & Shadow Tasks</title>
-
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Background -->
-  <div class="fog"></div><div class="fog fog2"></div>
-  <canvas id="pumpkins"></canvas>
-
-  <header class="header">
-    <h1>Blood & Shadow Tasks</h1>
-    <p class="sub">Minimal list. Optional cursed cards.</p>
-    <div id="bloodbar" class="bloodbar"></div>
-  </header>
-
-  <main class="wrap">
-    <!-- Filters + search -->
-    <div class="toolbar">
-      <div class="tabs">
-        <button class="tab active" data-filter="all">All</button>
-        <button class="tab" data-filter="today">Today</button>
-        <button class="tab" data-filter="upcoming">Upcoming</button>
-        <button class="tab" data-filter="done">Completed</button>
+<html lang="en" data-theme="professional">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Nexus To-Do</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <noscript class="noscript">Enable JavaScript to manage your tasks.</noscript>
+    <header class="app-header">
+      <div class="title-block">
+        <h1>Project Nexus (To-Do)</h1>
+        <p class="tagline">Seasonal productivity with a collectible twist.</p>
       </div>
-      <input id="search" type="text" placeholder="Search ( / )">
-    </div>
+      <div class="header-controls">
+        <label class="theme-picker">
+          <span class="label">Theme</span>
+          <select id="theme-select">
+            <option value="professional">Professional Dark</option>
+            <option value="halloween">Halloween</option>
+            <option value="christmas">Christmas</option>
+            <option value="mocking">Mocking Neon</option>
+          </select>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="holiday-overlay" />
+          <span>Holiday overlay</span>
+        </label>
+      </div>
+    </header>
 
-    <!-- Stats (small, not screaming) -->
-    <section class="stats">
-      <div class="card"><h3>TOTAL</h3><div class="num" id="sTotal">0</div></div>
-      <div class="card"><h3>TODAY</h3><div class="num" id="sToday">0</div></div>
-      <div class="card"><h3>DONE</h3><div class="num" id="sDone">0</div></div>
-      <div class="card"><h3>FOCUS</h3><div class="num" id="sFocus">0</div><div id="prodbar"><i></i></div></div>
-    </section>
-
-    <div class="layout">
-      <!-- List -->
-      <section class="panel list-panel">
-        <div class="panel-head">
-          <h4>Tasks</h4>
+    <main class="layout">
+      <section class="panel stats" aria-label="Task stats">
+        <div class="stat">
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="stat-total">0</span>
         </div>
-        <div id="list" class="list"></div>
-        <div id="empty" class="empty">No tasks. Add one or keep doomscrolling.</div>
+        <div class="stat">
+          <span class="stat-label">Today</span>
+          <span class="stat-value" id="stat-today">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Done</span>
+          <span class="stat-value" id="stat-done">0</span>
+        </div>
+        <div class="stat focus">
+          <span class="stat-label">Focus</span>
+          <span class="stat-value" id="stat-focus">0%</span>
+          <div class="focus-bar"><i id="focus-meter"></i></div>
+        </div>
       </section>
 
-      <!-- Form -->
-      <section class="panel form-panel">
-        <div class="panel-head">
-          <h4>Create / Edit Task</h4>
+      <section class="panel filters" aria-label="Task filters">
+        <div class="filter-tabs" role="tablist">
+          <button class="tab active" data-filter="all" role="tab">All</button>
+          <button class="tab" data-filter="pending" role="tab">Pending</button>
+          <button class="tab" data-filter="done" role="tab">Completed</button>
+          <button class="tab" data-filter="today" role="tab">Today</button>
+          <button class="tab" data-filter="upcoming" role="tab">Upcoming</button>
         </div>
-        <form id="f">
-          <div class="field">
-            <label for="name">Task Name</label>
-            <input id="name" name="name" type="text" autocomplete="off" placeholder="e.g., Finish CS homework" required>
-          </div>
-
-          <div class="field">
-            <label for="desc">Description</label>
-            <textarea id="desc" name="desc" placeholder="Optional notes…"></textarea>
-          </div>
-
-          <div class="grid g3">
-            <div class="field">
-              <label for="pri">Priority</label>
-              <select id="pri">
-                <option>Medium</option>
-                <option>High</option>
-                <option>Low</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="cat">Category</label>
-              <input id="cat" type="text" placeholder="e.g., school">
-            </div>
-            <div class="field">
-              <label for="due">Due</label>
-              <input id="due" type="datetime-local">
-            </div>
-          </div>
-
-          <div class="actions actions-roomy">
-            <button class="btn primary" id="addBtn" type="submit">SAVE TASK</button>
-            <button class="btn" type="button" id="clearDone">Clear Completed</button>
-            <button class="btn" type="button" id="seed">Seed Demo</button>
-          </div>
-        </form>
+        <div class="filter-search">
+          <label for="search" class="sr-only">Search tasks</label>
+          <input id="search" type="search" placeholder="Search ( / )" />
+          <label class="sorter">
+            <span class="sr-only">Sort by due date</span>
+            <select id="sort">
+              <option value="asc">Due ↑</option>
+              <option value="desc">Due ↓</option>
+            </select>
+          </label>
+        </div>
       </section>
-    </div>
 
-    <!-- Icon -->
-    <section class="panel icon-panel">
-      <h4>App Icon</h4>
-      <div class="actions">
-        <a id="iconLink" class="btn" download="blood-shadow-icon.svg">Download SVG</a>
-        <span class="mono">Square • scalable • Halloween-adjacent</span>
-      </div>
-    </section>
-  </main>
+      <section class="panel content">
+        <div class="columns">
+          <section class="column" aria-labelledby="tasks-heading">
+            <header class="panel-head">
+              <h2 id="tasks-heading">Tasks</h2>
+              <div class="panel-actions">
+                <button id="seed" class="btn ghost">Seed demo</button>
+                <button id="clear-complete" class="btn ghost">Clear completed</button>
+              </div>
+            </header>
+            <div class="task-list" id="task-list" role="list"></div>
+            <p class="empty" id="empty-state">No tasks yet. Add one to get started.</p>
+          </section>
 
-  <!-- Card overlay (Pokemon-style) -->
-  <div id="cardOverlay" class="card-overlay hidden">
-    <div class="card-backdrop"></div>
-    <div class="card-frame">
-      <button id="cardClose" class="card-close" type="button">&times;</button>
-      <button id="cardPrev" class="card-nav nav-left" type="button">&#10094;</button>
-      <button id="cardNext" class="card-nav nav-right" type="button">&#10095;</button>
+          <section class="column" aria-labelledby="form-heading">
+            <header class="panel-head">
+              <h2 id="form-heading">Create / Edit Task</h2>
+            </header>
+            <form id="task-form" class="task-form">
+              <input type="hidden" id="task-id" />
+              <label>
+                <span>Name</span>
+                <input id="task-name" name="name" required placeholder="e.g. Finish seasonal layout" autocomplete="off" />
+              </label>
+              <label>
+                <span>Description</span>
+                <textarea id="task-desc" name="desc" rows="3" placeholder="Optional notes"></textarea>
+              </label>
+              <div class="form-grid">
+                <label>
+                  <span>Priority</span>
+                  <select id="task-priority" name="priority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Category</span>
+                  <input id="task-category" name="category" placeholder="e.g. design" />
+                </label>
+                <label>
+                  <span>Due</span>
+                  <input id="task-due" name="due" type="datetime-local" />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary" id="save">Save task</button>
+                <button type="button" class="btn" id="cancel-edit">Cancel</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
 
-      <div id="cardShell" class="card-shell">
-        <div id="cardFront" class="card-front">
-          <!-- card content injected by JS -->
+    <aside class="deck" id="card-deck" aria-hidden="true">
+      <div class="deck-backdrop" data-close></div>
+      <div class="deck-card" role="dialog" aria-modal="true" aria-label="Task card" tabindex="-1">
+        <div class="deck-inner">
+          <section class="card-face front">
+            <header>
+              <h3 id="deck-title">Task</h3>
+              <p id="deck-status"></p>
+            </header>
+            <div id="deck-body"></div>
+            <footer>
+              <button class="btn" id="deck-toggle">Mark done</button>
+            </footer>
+          </section>
+          <section class="card-face back">
+            <header>
+              <h3>Next up</h3>
+              <p class="tip">Space/→ flip • ← previous • Esc close</p>
+            </header>
+            <div id="deck-next"></div>
+          </section>
         </div>
       </div>
-    </div>
-  </div>
+    </aside>
 
-  <div id="toast" class="toast">Saved</div>
-  <script src="app.js"></script>
-</body>
+    <template id="task-template">
+      <article class="task" role="listitem">
+        <button class="task-card" data-open>
+          <span class="task-title"></span>
+          <span class="task-desc"></span>
+          <span class="task-meta"></span>
+        </button>
+        <div class="task-actions">
+          <button class="btn small" data-toggle>Mark done</button>
+          <button class="btn small" data-edit>Edit</button>
+          <button class="btn small danger" data-delete>Delete</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
-
