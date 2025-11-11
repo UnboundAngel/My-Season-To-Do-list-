@@ -38,6 +38,7 @@ seasonal task manager as it evolves.
 - LocalStorage persistence, keyboard shortcuts, and accessibility affordances.
 - Optional seasonal and holiday themes (including the neon Mocking mode) with CSS variable overrides.
 - Card-deck inspired overlay for immersive task browsing.
+- Signature dark-mode baseline with layered glows and page-edge sheen on the deck view.
 
 For more details on specific changes, see [`updates.md`](./updates.md). For a quick
 reference to the current file layout, open [`file-structure.md`](./file-structure.md).

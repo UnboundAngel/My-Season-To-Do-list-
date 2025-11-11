@@ -13,3 +13,7 @@
 - Introduced a neon "Mocking" theme alongside refreshed seasonal decks.
 - Rebuilt Halloween and Christmas icons with bespoke lanterns, pumpkins, trees, and Santa sleigh artwork.
 - Upgraded the card deck presentation to a Pokémon-style flip with glossy overlays and added a revamped default favicon.
+
+## 2025-11-11 – Deck book-flip detailing
+- Refined the global dark theme backdrop with layered glows and subtle grain for a sharper default presentation.
+- Added page-edge gleam and deeper shadows to the deck flip cards so each turn feels like a premium collectible booklet.

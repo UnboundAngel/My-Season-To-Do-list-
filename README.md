@@ -25,6 +25,7 @@ checks via `pnpm typecheck`.
 - Pokémon-style card deck overlay for immersive review with keyboard controls.
 - LocalStorage persistence and optional notifications for due-soon / due-now tasks.
 - Theme toggle with seasonal palettes, a neon Mocking mode, and Halloween / Christmas overlays.
+- Signature neutral-dark base theme with layered glows that stays sleek without seasonal accents.
 - Accessible defaults: focus styling, ARIA labels, and reduced-motion support.
 
 ## Documentation
