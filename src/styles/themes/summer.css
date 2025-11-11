@@ -1,8 +1,0 @@
-html[data-theme='summer'] {
-  --accent: #ef4444;
-  --accent2: #f59e0b;
-  --bg-base: #140d0b;
-  --bg-glow-1: rgba(239, 68, 68, 0.2);
-  --bg-glow-2: rgba(245, 158, 11, 0.16);
-  --panel: rgba(24, 12, 10, 0.94);
-}

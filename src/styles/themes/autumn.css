@@ -1,8 +1,0 @@
-html[data-theme='autumn'] {
-  --accent: #b45309;
-  --accent2: #d97706;
-  --bg-base: #150f09;
-  --bg-glow-1: rgba(244, 114, 14, 0.2);
-  --bg-glow-2: rgba(217, 119, 6, 0.15);
-  --panel: rgba(23, 16, 11, 0.94);
-}
