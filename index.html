@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Nexus (To-Do)</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient sky ornaments -->
+  <div class="sky">
+    <div class="blood-moon" aria-hidden="true"></div>
+    <div class="lanterns" aria-hidden="true">
+      <svg class="lantern" viewBox="0 0 60 120">
+        <rect x="28" y="0" width="4" height="30" fill="#2a2b33"/>
+        <circle cx="30" cy="55" r="24" fill="#151521" stroke="#3a2a1a" stroke-width="2"/>
+        <ellipse cx="30" cy="58" rx="18" ry="16" fill="rgba(255,212,106,.65)"/>
+        <path d="M30 42 C26 52 28 55 30 60 C32 55 34 52 30 42 Z" fill="#ffd46a"/>
+      </svg>
+      <svg class="lantern" viewBox="0 0 60 120">
+        <rect x="28" y="0" width="4" height="30" fill="#2a2b33"/>
+        <circle cx="30" cy="55" r="24" fill="#151521" stroke="#3a2a1a" stroke-width="2"/>
+        <ellipse cx="30" cy="58" rx="18" ry="16" fill="rgba(255,212,106,.65)"/>
+        <path d="M30 42 C26 52 28 55 30 60 C32 55 34 52 30 42 Z" fill="#ffd46a"/>
+      </svg>
+    </div>
+  </div>
+
+  <header class="top">
+    <h1 class="nexus">
+      <span>Project Nexus (To-Do)</span>
+      <!-- decorative drip containers -->
+      <i class="drip d1"></i><i class="drip d2"></i><i class="drip d3"></i>
+    </h1>
+
+    <div class="controls">
+      <div class="tabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="today">Today</button>
+        <button class="tab" data-filter="upcoming">Upcoming</button>
+        <button class="tab" data-filter="done">Completed</button>
+        <button id="openSettings" class="tab" style="min-width:120px">Settings ⚙️</button>
+      </div>
+        <select id="theme" class="tab" style="min-width:160px">
+          <option value="halloween">Halloween</option>
+          <option value="autumn">Autumn</option>
+          <option value="winter">Winter</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="christmas">Christmas</option>
+        </select>
+      <input id="search" class="search" placeholder="Search ( / )" />
+    </div>
+
+
+
+    <div class="stats">
+      <div class="card"><div class="k">TOTAL</div><div class="v" id="sTotal">0</div></div>
+      <div class="card"><div class="k">TODAY</div><div class="v" id="sToday">0</div></div>
+      <div class="card"><div class="k">DONE</div><div class="v" id="sDone">0</div></div>
+      <div class="card">
+        <div class="k">FOCUS</div>
+        <div class="v" id="sProd">0%</div>
+        <div id="prodbar"><i></i></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel">
+      <div class="panel-h"><h2>Tasks</h2></div>
+      <div class="list" id="list" role="list"></div>
+      <div class="empty" id="empty">No tasks. Add one.</div>
+    </section>
+    <!-- Settings Modal -->
+<div id="settings" class="settings hide" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+  <div class="settings-card">
+    <div class="settings-head">
+      <h3 id="settingsTitle">Settings</h3>
+      <button id="closeSettings" class="btn small">✕</button>
+    </div>
+
+    <div class="settings-body">
+      <div class="settings-row">
+        <label>Theme</label>
+        <select id="themeSelect">
+          <option value="halloween">Halloween</option>
+          <option value="autumn">Autumn</option>
+          <option value="winter">Winter</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="christmas">Christmas</option>
+          <option value="dark-basic">Dark (Basic)</option>
+          <option value="light-basic">Light (Basic)</option>
+        </select>
+      </div>
+
+      <div class="settings-row">
+        <label>Density</label>
+        <select id="densitySelect">
+          <option value="roomy">Roomy</option>
+          <option value="cozy">Cozy</option>
+          <option value="compact">Compact</option>
+        </select>
+      </div>
+
+      <div class="settings-row">
+        <label>
+          <input type="checkbox" id="toggleStats" checked>
+          Show stats cards
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <label>
+          <input type="checkbox" id="toggleDecor" checked>
+          Decorative sky (moon, lanterns, pumpkins)
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <button id="resetTheme" class="btn bad">Remove seasonal themes (switch to Basic)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Create / Edit Task</h2></div>
+      <form id="f" class="form" autocomplete="off">
+        <label>Task Name
+          <input id="name" type="text" required placeholder="e.g., Finish CS homework" />
+        </label>
+        <label>Description
+          <textarea id="desc" placeholder="Optional notes…"></textarea>
+        </label>
+        <div class="row">
+          <label>Priority
+            <select id="pri"><option>Medium</option><option>High</option><option>Low</option></select>
+          </label>
+          <label>Category
+            <input id="cat" type="text" placeholder="e.g., school" />
+          </label>
+          <label>Due
+            <input id="due" type="datetime-local" />
+          </label>
+        </div>
+        <div class="row actions">
+          <button class="btn primary" id="addBtn" type="submit">Save Task</button>
+          <button class="btn" id="clearDone" type="button">Clear Completed</button>
+          <button class="btn" id="seed" type="button">Seed Demo</button>
+          <button class="btn" id="toggleCardMode" type="button">Card Mode</button>
+        </div>
+      </form>
+    </section>
+
+
+  <!-- Card Deck overlay -->
+  <div id="deck" class="deck" aria-hidden="true">
+    <div id="deckCard" class="deckCard">
+      <div id="deckInner" class="deckInner">
+        <div id="cardFront" class="cardFace">
+          <div class="cover" id="frontCover"></div>
+          <div class="foil"></div><div class="shine"></div>
+          <div class="faceGrid">
+            <div class="faceHeader"><span class="badge">Task</span><span class="progress" id="deckProgress"></span></div>
+            <div class="faceBody" id="frontBody"></div>
+            <div class="faceFooter">
+              <button class="btn small good" id="frontToggle">Mark Done</button>
+              <span class="hint">Space/→ next • ← prev • Esc</span>
+            </div>
+          </div>
+        </div>
+        <div id="cardBack" class="cardFace back">
+          <div class="cover dim" id="backCover"></div>
+          <div class="foil"></div><div class="shine"></div>
+          <div class="faceGrid">
+            <div class="faceHeader"><span class="badge">Next</span></div>
+            <div class="faceBody" id="backBody"></div>
+            <div class="faceFooter"><span class="hint">Click or swipe</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Decorative pumpkins at the bottom -->
+  <div id="pumpkinRow" class="pumpkin-row" aria-hidden="true"></div>
+  <div id="toast" class="toast">Saved</div>
+  <script src="app.js"></script>
+</body>
+</html>
+
